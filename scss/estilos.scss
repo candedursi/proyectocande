@@ -1,0 +1,579 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "utilities/variables";
+
+html{
+    height: 100vh;
+}
+
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(248,246,246,1) 0%, rgba(242,231,231,1) 0%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 100%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.2fr 1.5fr 0.8fr;
+    grid-template-areas: "header header header header"
+                         "main main main main"
+                         "footer footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+.mainHome{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
+
+header{
+    background-color: #F5F1F1 ;
+    padding: 15px 1200px 15px 100px;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+
+    h1{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 25px;
+        font-weight: 50;
+        text-align: left;
+        color: rgb(121, 59, 59);
+    }
+
+    .logo{
+        position: fixed;
+        top: 0%;
+        left: 0;
+        height: 86px;
+        width: 86px;
+    }
+    
+    .nav{
+        position: fixed;
+        top: 25px;
+        right: 0;
+        background-color: #F6F0EF;
+
+        ul{
+            list-style: none;
+        }
+
+        .menu{
+            li{
+                position: relative;
+                display: inline-block;
+                
+
+                a{
+                    display: block;
+                    padding: 10px 15px;
+                    color: $color-etiquetas;
+                    font-family: 'Montserrat', sans-serif;
+                    text-decoration: none;
+
+                    &:hover{
+                        color: rgb(177, 81, 81);
+                        transition: all .5s;
+                    }
+                }
+
+                .submenu{
+                    position: absolute;
+                    background-color: #f7ecec;
+                    font-family: 'Montserrat', sans-serif;
+                    text-decoration: none;
+                    width: 100%;
+                    visibility: visible;
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                    text-align: center;
+                    color: rgb(95, 41, 41);
+                    
+                    &:hover{
+                        visibility: visible;
+                        opacity: 1;
+                    }  
+
+                    li{      
+                        a{
+                            display: block;
+                            padding: 10px;
+                            color: $color-etiquetas;
+                            font-family: 'Montserrat', sans-serif;
+                            text-decoration: none;
+                            list-style: none;
+                        }
+                    }
+                  
+                
+                }
+            }
+        }
+    }
+
+}
+
+.mainHome{
+    .imagenUno{
+        background-position: center;
+        width: 100%;
+        height: 655px;
+    
+    }
+    
+    .imagenLogoDos{
+        position: relative;
+        left: 570px;
+        bottom: 492px;
+        width: 205px;
+        height: 200px;
+    }
+}
+
+//ACERCA NUESTRO 
+.contenedorAn{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.2fr 0.8fr 1.5fr 0.8fr;
+
+    grid-template-areas: "header header header header"
+                         "aside aside aside aside"
+                         "main1 main2 main2 main2"
+                         "footer footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+.acercaNuestro{
+    grid-area: aside;
+}
+
+.textoAcerca{
+    grid-area: main1;
+}
+
+.imagenAcerca{
+    grid-area: main2;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.titulo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    height: 40px;
+    padding: 10px;
+    background-color: #f0e2de;
+    font-weight: 400;
+    width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 120px 0 0 50px;
+}
+
+
+.textoAcerca{
+    margin: 25px 20px 10px 400px;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(208, 230, 228);
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 350;
+    width: 500px;
+}
+
+.imagenAcerca{
+    margin: 10px 10px 80px 500px;
+    width: 350px;
+    height: 300px;
+}
+
+//EQUIPO
+.contenedorEq{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.2fr 0.5fr 1.2fr 1fr 0.8fr;
+
+    grid-template-areas: "header header header header"
+                         "aside aside aside aside"
+                         "main1 main1 main1 main1"
+                         "main2 main2 manin2 main2"
+                         "footer footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+.titulo{
+    grid-area: aside;
+}
+
+.imagenesEquipo{
+    grid-area: main1;
+}
+
+.nombres, .presentacion{
+    grid-area: main2;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.titulo{
+    left: 25px;
+    top: 105px;
+    padding: 10px;
+    height: 40px;
+}
+
+.imagenesEquipo{
+    display: flex;
+    flex-grow: wrap;
+    justify-content: space-between ;
+    align-items: center;
+    align-content: flex-end;
+    margin: 60px 10px 2px 10px;
+
+    .imagenJuli{
+        width: 250px;
+        height: 250px; 
+        text-align: center;
+        margin: 2px 200px 1px 200px;
+    }
+    
+    .imagenMane{
+        width: 250px;
+        height: 250px;
+        text-align: center;
+        margin: 2px 250px 1px 200px;
+    }
+}
+
+.nombres{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-between;
+    width: 800px;
+    margin: 1px 265px;
+    align-content: flex-end;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #c28b8b;
+}
+
+.presentacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1100px;
+    margin: 5px 150px;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #cc9494;
+    text-align: center;
+    font-weight: 300;
+}
+
+//PRODUCTOS
+.contenedorPr{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 0.2fr 0.8fr 1.5fr 1.5fr 1.5fr 0.8fr;
+
+    grid-template-areas: "header header header header"
+                         "aside aside aside aside"
+                         "main1 main1 main1 main1"
+                         "main2 main2 manin2 main2"
+                         "main3 main3 main3 main3"
+                         "footer footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+.titulo{
+    grid-area: aside;
+}
+
+.indicaciones{
+    grid-area: main1;
+}
+
+.galeria{
+    grid-area: main2;
+}
+
+.dosOpciones{
+    grid-area: main3;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+.indicaciones{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: 300;
+    text-align: center;
+    background-color: #e4b1b1;
+    border-radius: 50px;
+    width: 600px;
+    margin: 20px 10px 0 400px;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    margin: 30px 200px 2px 180px;
+    width: 1000px;
+    padding: 2px;
+    background-color: #f0e5e5;
+
+    img{
+        width: 150px;
+        height:150px;
+        padding: 5px;
+        margin: 3px;
+
+        &:hover{
+            transform: scale(1.3);
+            transition: 1.2s;
+        }
+    }
+}
+
+.dosOpciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1300px;
+    margin: 0px 10px;
+    list-style: none;
+
+    .comprarNombre{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        list-style: none;
+        margin: 20px 40px 0 30px;
+        color: #804545;
+    }
+    
+    .comprar{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        background-color: #ecd3d3;
+        text-align: center;
+        height: 70px;
+        width: 600px;
+        margin: 0 50px 10px 10px;
+        list-style: none;
+        border-radius: 10px;
+    }
+    
+    .recibir{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        background-color: #ecd3d3;
+        text-align: center;
+        margin: 0 10px 10px 50px;
+        width: 500px;
+        height: 70px;
+        list-style: none;
+        border-radius: 10px;
+    }
+}
+
+//TALLER
+.contenedorTa{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 0.2fr 0.8fr 1.5fr 1.5fr 1.5fr 0.8fr;
+
+    grid-template-areas: "header header header header"
+                         "aside aside aside aside"
+                         "main1 main1 main1 main1"
+                         "main2 main2 manin2 main2"
+                         "main3 main3 main3 main3"
+                         "footer footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+.titulo{
+    grid-area: aside;
+}
+
+.oferta{
+    grid-area: main1;
+}
+
+.textoTaller{
+    grid-area: main2;
+}
+
+.videoTaller{
+    grid-area: main3;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+
+.oferta{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    text-align: center;
+    font-weight: 300;
+    height: 30px;
+    margin: 30px 0 0 400px;
+
+}
+
+.textoTaller{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: 400;
+    text-align: center;
+    background-color: rgb(219, 230, 226);
+    border-radius: 20px;
+    width: 450px;
+    margin: 10px 1px 20px 490px;
+
+
+}
+
+.videoTaller{
+    margin: 1px 2px 50px 420px;
+    width: 600px;
+    height: 300px;
+}
+
+//CONTACTO
+.contenedorCo{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.2fr 0.8fr 1.5fr 1.5fr 0.8fr;
+
+    grid-template-areas: "header header header header"
+                         "aside aside aside aside"
+                         "main1 main1 main1 main1"
+                         "main2 main2 manin2 main2"
+                         "footer footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+.titulo{
+    grid-area: aside;
+}
+
+.contacto{
+    grid-area: main1;
+}
+
+.formulario{
+    grid-area: main2;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+.contacto{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: 300;
+    margin: 20px 500px 20px 550px;
+    padding: 20px 20px 20px 25px;
+    background-color: rgb(248, 229, 229);
+    width: 270px;
+    border-radius: 200px;
+    text-align: center;
+}
+
+.formulario{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 400px 40px 450px;
+    width: 500px;
+    border: 10px solid #d3c5c5;
+
+    .formularioContacto{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: large;
+        color: black;
+        font-weight: 500;
+    }
+    
+    .formularioOpciones{
+        display: flex;
+        justify-content: flex-end;
+
+        .enviar{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            background-color: #fce9e9;
+            margin: 20px 40px;
+        }
+        
+        .borrar{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            background-color: #fce9e9;
+            margin: 20px;
+        }
+    }
+}
+
+.footer{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3edeb;
+    font-size: smaller;
+    padding: 5px;
+    position: relative;
+    bottom: 0;
+}
